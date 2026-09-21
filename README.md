@@ -2,6 +2,8 @@
 
 A real-time, dependency-free C++20 simulation of **50,000 evolving ants**. Ants forage using pheromones, spend energy, deliver food, die and reproduce. Successful foragers are more likely to become parents; seven traits are inherited with mutation.
 
+Searching ants perform a correlated random walk when no useful pheromone gradient is present, disperse outward near the nest, and occasionally make a larger loop-breaking turn. Strong trails gradually override that exploration.
+
 ## Run on Windows
 
 Download the Windows artifact from GitHub Actions, unzip it, and launch `AntEvolution.exe`. Windows SmartScreen may show an unsigned-app warning because this personal build has no paid code-signing certificate.
@@ -20,7 +22,7 @@ Download the Windows artifact from GitHub Actions, unzip it, and launch `AntEvol
 
 ## Genetics
 
-Each ant carries speed, sensor distance, sensor angle, turn rate, metabolism, pheromone deposit and exploration genes. Food deliveries raise fitness. When an ant dies, two parents are selected through small fitness tournaments and their averaged genes mutate. The population remains exactly 50,000.
+Each ant carries speed, sensor distance, sensor angle, turn rate, metabolism, pheromone deposit and exploration genes. Food deliveries raise fitness. When an ant dies, two parents are selected through small fitness tournaments and their averaged genes mutate. Lifespans are randomized so replacement happens continuously rather than as one synchronized mass generation. The population remains exactly 50,000.
 
 ## Build automatically (no compiler needed)
 

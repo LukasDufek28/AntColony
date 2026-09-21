@@ -43,7 +43,7 @@ static void overlay(HDC dc,int w,int h,double fps){
  wchar_t line[256];
  swprintf(line,256,L"Population  %d     Speed  %dx",int(sim.ants.size()),speed);text(dc,30,67,line);
  swprintf(line,256,L"Food        %.0f     FPS    %.0f",sim.colonyFood,fps);text(dc,30,91,line);
- swprintf(line,256,L"Deliveries  %llu     Births %llu",sim.deliveries,sim.births);text(dc,30,115,line);
+ swprintf(line,256,L"Deliveries  %llu     Gen.   %.2f",sim.deliveries,double(sim.births)/double(ANT_COUNT));text(dc,30,115,line);
  auto g=sim.averages();swprintf(line,256,L"Genes: speed %.2f  sense %.1f",g.speed,g.sensorDistance);text(dc,30,139,line,RGB(178,204,166));
  swprintf(line,256,L"       efficiency %.2f  turn %.2f",2.f-g.metabolism,g.turnRate);text(dc,30,163,line,RGB(178,204,166));
  if(showHelp){
