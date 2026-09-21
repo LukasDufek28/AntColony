@@ -38,5 +38,3 @@ cmake --build build --config Release
 ```
 
 The executable will be at `build\Release\AntEvolution.exe`.
-
-"# AntColony" 
